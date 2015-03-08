@@ -6,7 +6,7 @@ myService.factory('myFactory', ['$http',function($http) {
     	    	console.log("start the func");
 
       return $http.get("https://ajax.googleapis.com/ajax/services/search/news?v=1.0&topic=e&callback=callback")
-        // .success(callback)
+        .success(callback)
         .error(function(error) {
         	console.log(error);
         });
