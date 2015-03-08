@@ -3,34 +3,49 @@
 
 <head>
   <title></title>
-  <h3 class=" red-text text-lighten-5">Hello People</h3>
+
   <link rel="stylesheet" type="text/css" href="css/myApp.css">
-  <!-- <script type="text/javascript" src="js/angular.min.js"></script> -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
   <script type="text/javascript" src="js/controller.js"></script>
   <script type="text/javascript" src="js/service1.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script> -->
+  <script type="text/javascript" src="js/service.js"></script>
 </head>
 
-<body class="blue lighten-3">
+<body>
 
-  <button ng-click="btn()">Submit </button>
-  <div ng-model="display">
-    <!-- <a href = "{{display}}">click this</a> -->
-    <div class="container">
-      <div class="row">
-        <div ng-repeat="x in list" class="col-md-4" id="display">
-          <a href="{{'http://'+x.domain + x.path}}"><img src="images/images.jpeg">
-            <p>{{x.title}}</p>
-          </a>
+  <select ng-model="selectedItem" ng-options="opt as opt.label for opt in options" id="search">
+  </select>
+  <button ng-click="btn1()">Submit</button>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div ng-repeat="x in list" class="show" ng-model="display">
+            <div ng-repeat="y in x" class="col-sm-4" id="adjust">
+              <div ng-if="y.image.url">
+                <a href="{{y.unescapedUrl}}" target="_blank" class="article">
+                  <img src="{{y.image.url}}">
+                  <p>{{y.title}}</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+
         </div>
-
+        <button ng-click="btn()">more info</button>
+      </div>
+      <div class="col-md-4">
+        <ul>
+          <li ng-repeat="x in show" ng-if="x.title">
+            <a href="http://{{x.domain}}{{x.path}}" target="_blank">{{x.title}}</a>
+          </li>
+        </ul>
       </div>
     </div>
-
   </div>
+
 </body>
 
 </html>

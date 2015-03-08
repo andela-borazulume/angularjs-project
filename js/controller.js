@@ -1,35 +1,66 @@
-var myApp = angular.module("myApp", ['myService']);
-myApp.controller('myController', ['$scope', 'myFactory', function($scope, myFactory) {
-  // $scope.btn = function(){
+var myApp = angular.module("myApp", ['myService', 'myService1']);
+myApp.controller('myController', ['$scope', 'myFactory', 'myFactory1', function($scope, myFactory, myFactory1) {
+  var emptyArray = [];
 
-  	function callback(data) {
-    // for (var i = 0; i < data.length; i++) {
-    //   var domain = "http://" + data[i].domain;
-    //   var path = data[i].path;
-    //   var total = domain + path;
-    //   // console.log(data);
 
-    //   console.log(total);
-    //   $scope.total = total;
+  $scope.options = [{
+    label: 'Headlines',
+    value: 'h'
+  }, {
+    label: 'World ',
+    value: 'w'
+  }, {
+    label: 'Business',
+    value: 'b'
+  }, {
+    label: 'Nation',
+    value: 'n'
+  }, {
+    label: 'Science and Technology',
+    value: 't'
+  }, {
+    label: 'Entertainment',
+    value: 'e'
+  }, {
+    label: 'Election',
+    value: 'el'
+  }, {
+    label: 'Politics',
+    value: 'p'
+  }, {
+    label: 'sports',
+    value: 's'
+  }, {
+    label: 'Health',
+    value: 'm'
+  }];
 
-    // }
-    // $scope.list = data;
-    // $scope.title1 = title;
-    // console.log(data);
-
-    // console.log(data);
-    // var title = data[4].title;
-    // var path = data[4].path;
-    // var domain = data[4].domain;
-    // var total = "http://"+domain + path;
-    // console.log(total);
-    //$scope.list = data;
+  function callback(data) {
     console.log(data);
+    emptyArray.push(data.responseData.results);
+    $scope.list = emptyArray;
   }
+  var query = 0;
+  $scope.btn = function() {
+    if (query < 63) {
+      query = query + 8;
 
-  myFactory.getResponse(callback);
+    } else {
+      query = 0;
+    }
+    console.log($scope.selectedItem.value);
+    myFactory.getResponse($scope.selectedItem.value, query, callback);
+  };
 
-  // };
+  $scope.btn1 = function() {
+    emptyArray = [];
+    query = 0;
+    myFactory.getResponse($scope.selectedItem.value, query, callback);
 
+  };
+
+  myFactory1.getResponse1(function(data) {
+    $scope.show = data;
+  });
 
 }]);

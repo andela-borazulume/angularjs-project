@@ -1,8 +1,28 @@
 img {
-	/*height: 100%;*/
-	width: 100%;
+  height: 150px;
+  width: 100%;
 }
-#display {
-	margin-top: 1020px;
-	margin-bottom: 30px;
+.show {
+  margin-bottom: 9%;
+  margin-top: 9%;
+  height: 300px;
+}
+body {
+  background-image: url("../images/background3.jpeg");
+  background-size: cover;
+}
+#adjust {
+  height: 250px;
+}
+.article {
+  color: #EFEFEF;
+}
+a: hover {
+  color: #EFEFEF;
+}
+#search {
+	width: 400px;
+	margin-left: 6em;
+	margin-top: 3em;
+	font-size: 3em;
 }

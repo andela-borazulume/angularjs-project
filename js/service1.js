@@ -1,16 +1,13 @@
 var myService = angular.module('myService', []);
-myService.factory('myFactory', ['$http',function($http) {
+myService.factory('myFactory', ['$http', function($http) {
   return {
-    getResponse: function(callback) {
-
-    	    	console.log("start the func");
-
-      return $http.get("https://ajax.googleapis.com/ajax/services/search/news?v=1.0&topic=e&callback=callback")
+    getResponse: function(search, query, callback) {
+      console.log(query);
+      return $http.jsonp("https://ajax.googleapis.com/ajax/services/search/news?v=1.0&topic=" + search + "&callback=JSON_CALLBACK&rsz=8&start=" + query)
         .success(callback)
         .error(function(error) {
-        	console.log(error);
+          console.log(error);
         });
-      // console.log("run the func");
     }
   };
 }]);
