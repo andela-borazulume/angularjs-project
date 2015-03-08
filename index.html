@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myController">
+
+<head>
+  <title></title>
+  <h3 class=" red-text text-lighten-5">Hello People</h3>
+  <link rel="stylesheet" type="text/css" href="css/myApp.css">
+  <!-- <script type="text/javascript" src="js/angular.min.js"></script> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <script type="text/javascript" src="js/controller.js"></script>
+  <script type="text/javascript" src="js/service1.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script> -->
+</head>
+
+<body class="blue lighten-3">
+
+  <button ng-click="btn()">Submit </button>
+  <div ng-model="display">
+    <!-- <a href = "{{display}}">click this</a> -->
+    <div class="container">
+      <div class="row">
+        <div ng-repeat="x in list" class="col-md-4" id="display">
+          <a href="{{'http://'+x.domain + x.path}}"><img src="images/images.jpeg">
+            <p>{{x.title}}</p>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
