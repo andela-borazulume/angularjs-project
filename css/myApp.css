@@ -8,21 +8,45 @@ img {
   height: 300px;
 }
 body {
-  background-image: url("../images/background3.jpeg");
+  /*background-image: url("../images/backgroung4.jpeg");*/
+  background-color: #21252A;
   background-size: cover;
 }
 #adjust {
   height: 250px;
 }
 .article {
-  color: #EFEFEF;
+  color: #B8E6E6;
 }
 a: hover {
   color: #EFEFEF;
 }
 #search {
-	width: 400px;
-	margin-left: 6em;
-	margin-top: 3em;
-	font-size: 3em;
+  width: 400px;
+  margin-left: 6em;
+  margin-top: 0;
+  font-size: 3em;
+}
+.carou {
+  background-image: url("../images/gossip.png");
+  width: 49em;
+  height: 23em;
+  margin-top: 2em;
+  margin-left: 2em;
+  background-size: 70%;
+}
+h2 {
+	margin: 0 auto;
+	font-family: 'Lobster Two', cursive;
+	color: #B8E6E6;
+
+}
+#header {
+	background-color: #24476B;
+}
+#more {
+	background-color: black;
+	border-radius: 5px;
+	color: #503629;
+	margin-top: 2em;
 }

@@ -4,8 +4,11 @@
 <head>
   <title></title>
 
-  <link rel="stylesheet" type="text/css" href="css/myApp.css">
+
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/myApp.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
   <script type="text/javascript" src="js/controller.js"></script>
   <script type="text/javascript" src="js/service1.js"></script>
@@ -13,13 +16,36 @@
 </head>
 
 <body>
-
-  <select ng-model="selectedItem" ng-options="opt as opt.label for opt in options" id="search">
-  </select>
-  <button ng-click="btn1()">Submit</button>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid" id="header">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <h2>News Girl App</h2>
+        <select ng-model="selectedItem" ng-options="opt as opt.label for opt in options" id="search">
+        </select>
+        <button class="btn-md" ng-click="btn1()">Submit</button>
+      </div>
+    </div>
+  </nav>
   <div class="container">
     <div class="row">
       <div class="col-md-8">
+        <div class="carou">
+          <div class="container">
+            <br>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+              <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div> 
         <div class="row">
           <div ng-repeat="x in list" class="show" ng-model="display">
             <div ng-repeat="y in x" class="col-sm-4" id="adjust">
@@ -31,15 +57,13 @@
               </div>
             </div>
           </div>
-          
-
         </div>
-        <button ng-click="btn()">more info</button>
+        <button id="more" ng-click="btn()">>>more stories</button>
       </div>
       <div class="col-md-4">
         <ul>
           <li ng-repeat="x in show" ng-if="x.title">
-            <a href="http://{{x.domain}}{{x.path}}" target="_blank">{{x.title}}</a>
+            <a href="http://{{x.domain}}{{x.path}}" target="_blank" class="article">{{x.title}}</a>
           </li>
         </ul>
       </div>
