@@ -8,7 +8,6 @@ img {
   height: 300px;
 }
 body {
-  /*background-image: url("../images/backgroung4.jpeg");*/
   background-color: #21252A;
   background-size: cover;
 }
@@ -23,7 +22,7 @@ a: hover {
 }
 #search {
   width: 400px;
-  margin-left: 6em;
+  margin-left: 5em;
   margin-top: 0;
   font-size: 3em;
 }
@@ -36,17 +35,21 @@ a: hover {
   background-size: 70%;
 }
 h2 {
-	margin: 0 auto;
-	font-family: 'Lobster Two', cursive;
-	color: #B8E6E6;
-
+  margin: 0 auto;
+  font-family: 'Lobster Two', cursive;
+  color: #B8E6E6;
 }
 #header {
-	background-color: #24476B;
+  background-color: #24476B;
 }
 #more {
-	background-color: black;
-	border-radius: 5px;
-	color: #503629;
-	margin-top: 2em;
+  background-color: black;
+  border-radius: 5px;
+  color: #503629;
+  margin-top: 2em;
+}
+#choose{
+	margin: 2px 0 -23px;
+	color: beige;
+	font-size: 1em;
 }
